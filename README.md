@@ -20,7 +20,7 @@ pip install -r requirements.txt
 pip install "sqlalchemy>=2" "psycopg[binary]>=3" langchain_text_splitters langchain_google_genai langchain_community langchain_postgres
 ```
 
-# Envie para o arquivo
+# Envie para o arquivo (exemplo)
 ```bash
 pip freeze > requirements.txt
 ```
