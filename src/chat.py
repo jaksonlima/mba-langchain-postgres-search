@@ -49,7 +49,6 @@ def main():
     # chama a função de busca (PGVector)
     results = search_prompt(pergunta)
 
-
     if not results:
         print("Não foi possível encontrar resultados.")
         return
