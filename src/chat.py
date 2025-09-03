@@ -42,7 +42,6 @@ def main():
     # pede entradas ao usuário
     print("=== Chat com Gemini e busca no PostgreSQL + PGVector ===")
     print("=== Entradas contexto e pergunta ===")
-    # contexto = input("Digite o contexto: ").strip()
     # exemplo = Nomes de empresas que começam com a letra A, cujo faturamento seja maior que 1 milhão e que sejam as mais antigas.
     pergunta = input("Digite a pergunta: ").strip()
 
