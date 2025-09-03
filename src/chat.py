@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Carrega variáveis de ambiente do arquivo .env
 load_dotenv()
 
-GOOGLE_MESSAGES = os.getenv("GOOGLE_MESSAGES")  # modelo de embedding do Gemini
+GOOGLE_MESSAGES = os.getenv("GOOGLE_MESSAGES")  # modelo de messages do Gemini
 
 # mesmo template usado no search
 PROMPT_TEMPLATE = """
