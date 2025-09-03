@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 #### Como instalar os pacotes (opcional)
 ```bash
-pip install "sqlalchemy>=2" "psycopg[binary]>=3" langchain_text_splitters langchain_google_genai langchain_community langchain_postgres
+pip install "sqlalchemy>=2" "psycopg[binary]>=3" langchain_text_splitters langchain_google_genai langchain_community langchain_postgres pypdf
 ```
 
 #### Envie para o arquivo (opcional)
