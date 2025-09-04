@@ -44,6 +44,7 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 RESPOSTA: Formate com cabeçalho que fique legível, usando listas ou tabelas se necessário, com 4 linhas.
 """
+FALLBACK = "Não tenho informações necessárias para responder sua pergunta"
 
 session_store: dict[str, InMemoryChatMessageHistory] = {}
 
@@ -54,7 +55,6 @@ def get_session_history(session_id: str) -> InMemoryChatMessageHistory:
 
 
 def prepare_inputs(payload: dict) -> dict:
-    FALLBACK = "Não tenho informações necessárias para responder sua pergunta"
     raw_history = payload.get("raw_history", [])
 
     # 1) Remove mensagens de fallback do assistente
@@ -130,14 +130,11 @@ def main():
         # chama a função de busca (PGVector)
         results = search_prompt(pergunta)
 
-        if not results:
-            print("Não foi possível encontrar resultados.")
-            return
-
         # exibe os documentos recuperados
         docs_text = []
         for i, (doc, score) in enumerate(results, start=1):
-            snippet = doc.page_content[:300].replace("\n", " ")
+            # snippet = doc.page_content[:300].replace("\n", " ") # pega só um trecho do doc
+            snippet = doc.page_content.replace("\n", "|")
             docs_text.append(snippet)
 
         # monta um contexto consolidado (docs recuperados)
